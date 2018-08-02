@@ -1,0 +1,27 @@
+{
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "body": {
+          "data": {
+            "type": "validatedCustomer",
+            "id": "",
+            "attributes": {
+              "code": "FAILED",
+              "message": "The API call was failed"
+            }
+          }
+
+        }
+
+      }
+    }
+  ],
+  "predicates": [{
+    "equals": {
+      "method": "GET",
+      "path": "/validate"
+    }
+  }]
+}

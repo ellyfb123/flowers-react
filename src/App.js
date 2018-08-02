@@ -1,25 +1,13 @@
 import React from 'react';
-import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import createHistory from 'history/createBrowserHistory';
-import {
-  ConnectedRouter,
-  routerMiddleware
-} from 'react-router-redux';
+import { ConnectedRouter } from 'react-router-redux';
+import createHistory from 'history/createHashHistory';
 
-import reducers from "./reducers";
+import storeConfigure from './store/index';
 import Router from './components/Router/Router';
 
 const history = createHistory();
-
-const middleware = routerMiddleware(history);
-
-const store = createStore(
-  combineReducers({
-    ...reducers,
-  }),
-  applyMiddleware(middleware)
-);
+const store = storeConfigure(history);
 
 const App = () => (
   <Provider store={store}>

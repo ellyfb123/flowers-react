@@ -1,0 +1,14 @@
+{
+    "responses": [
+      {
+        "proxy": {
+          "to": "http://localhost:8080",
+          "mode": "proxyOnce",
+          "predicateGenerators": [{
+            "matches": { "method": true, "query": true, "body": true, "path": true },
+            "caseSensitive": true
+          }]
+        }
+      }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+"imposters": [
+        {
+            "port": 8080,
+            "protocol": "http",
+            "stubs": [
+                <% include validate/failValidate.json %>,
+                <% include proxy.json %>
+            ]
+        }
+    ]
+}
