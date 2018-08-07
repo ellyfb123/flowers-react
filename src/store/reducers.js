@@ -1,8 +1,10 @@
 import { routerReducer as router } from 'react-router-redux';
+import { reducer as formReducer } from 'redux-form';
 
-import validateReducer from '../modules/validate/reducer';
+import validate from '../modules/validate/reducer';
 
 export default {
     router,
-    validateReducer,
+    validate,
+    form: formReducer,
 };

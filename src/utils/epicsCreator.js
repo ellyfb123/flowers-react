@@ -22,7 +22,11 @@ export default (type, asyncFn, sucCallback, failCallback) => (action$, store) =>
                     return res;
                 })
                 .catch((e) => {
-                    isError = true;
+                    if (e.statusCode === 200) {
+                        isError = false
+                    } else {
+                        isError = true;
+                    }
                     return e;
                 }));
         })
